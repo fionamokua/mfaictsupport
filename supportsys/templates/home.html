@@ -1,0 +1,35 @@
+{% extends '_base.html' %}
+{% load static%}
+{%block title%}landingpage{%endblock title%}
+{% block content %}
+<div class="banner">
+    <div class="navbar">
+        <img src="{% static 'images/logo.png'%}" alt="" class="logo">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="{%url 'taskform'%}">KnowledgeBase</a></li>
+        
+            <li><a href="{% url 'account_signup'%}">Signup</a></li>
+            <li><a href="{% url 'account_login'%}">Login</a></li>
+            <li><a href="{%url 'account_logout'%}">Logout</a></li>
+            <li><a href="">profile</a></li>
+        </ul>
+      
+      </div>
+
+      <div class="content">
+        <h1>YOUR TECH PROBLEMS,OUR SOLUTION</h1>
+        <p>Experience the difference of personalized,responsive and reliable ICT support <br> we're here for you 24/7</p>
+        <div>
+            <button class="landingpagebtn"> <span></span>GetHelp</button>
+            
+        </div>
+      </div>
+   
+   
+    
+
+</div>
+
+{% endblock content %}

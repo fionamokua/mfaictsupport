@@ -1,0 +1,62 @@
+{% extends '_base.html'%}
+
+{% block title%}tasks{% endblock title%}
+
+{% block content%}
+<div class="container">
+
+  <div class="left">
+
+
+    <div class="header">
+      <h2 class="animation a1">Welcome</h2>
+      <h4 class="animation a2">Do you wish to request for ICT Support?</h4>
+    </div>
+
+    <form class="form">
+      <input type="number" class="form-field animation a3" placeholder="RoomNumber" min="1">
+  
+        <select name="cars" id="problem-select" class="form-field animation a3" placeholder="RoomNumber">
+        <option value="volvo">Internet</option>
+        <option value="saab">Computer_Issue</option>
+        <option value="opel">RequestMeeting</option>
+        <option value="audi">Other</option>
+      </select></p>
+      
+      <div id="task-details" style="display: none;">
+        <input type="text" class="form-field animation a1" placeholder="TaskDescription">
+      </div>
+
+      <div id="meeting-details" style="display: none;">
+        <input type="text" class="form-field animation a1" placeholder="Directorate">
+        <input type="text" class="form-field animation a1" placeholder="Division">
+        <input type="text" class="form-field animation a1" placeholder="Station">
+      </div>
+
+      <button class="animation a6">Submit</button>
+    </form>
+  </div>
+  
+  <div class="right"></div>
+</div>
+
+<script>
+  const problemSelect = document.getElementById('problem-select');
+  const meetingDetails = document.getElementById('meeting-details');
+  const taskDetails = document.getElementById('task-details');
+
+  problemSelect.addEventListener('change', () => {
+    if (problemSelect.value === 'opel') {
+      meetingDetails.style.display = 'block';
+      taskDetails.style.display = 'none';
+    } else if (problemSelect.value === 'audi') {
+      meetingDetails.style.display = 'none';
+      taskDetails.style.display = 'block';
+    } else {
+      meetingDetails.style.display = 'none';
+      taskDetails.style.display = 'none';
+    }
+  });
+</script>
+
+{% endblock content%}
